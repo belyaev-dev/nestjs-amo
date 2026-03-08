@@ -25,9 +25,9 @@ export interface AmoServiceOptions {
   >;
   getCredentials: (amoId: number) => Promise<
     Pick<OAuth, Exclude<keyof OAuth, 'token_type' | 'expires_in'>> &
-    Partial<Pick<OAuth, 'token_type' | 'expires_in'>> & {
-      domain: string;
-    }
+      Partial<Pick<OAuth, 'token_type' | 'expires_in'>> & {
+        domain: string;
+      }
   >;
   onTokenUpdate: (amoId: number, token: OAuth) => void | Promise<void>;
   onError?: (
