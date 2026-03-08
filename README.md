@@ -6,10 +6,10 @@
   </a>
 </div>
 
-<h3 align="center">nestjs-amo</h3>
-<a href="https://www.npmjs.com/package/nestjs-nestjs-amo"><img src="https://img.shields.io/npm/v/nestjs-amo.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/nestjs-amo"><img src="https://img.shields.io/npm/l/nestjs-amo.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/nestjs-amo"><img src="https://img.shields.io/npm/dm/nestjs-amo.svg" alt="NPM Downloads" /></a>
+<h3 align="center">@belyaev_dev/nestjs-amo</h3>
+<a href="https://www.npmjs.com/package/@belyaev_dev/nestjs-amo"><img src="https://img.shields.io/npm/v/%40belyaev_dev%2Fnestjs-amo.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/package/@belyaev_dev/nestjs-amo"><img src="https://img.shields.io/npm/l/%40belyaev_dev%2Fnestjs-amo.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/package/@belyaev_dev/nestjs-amo"><img src="https://img.shields.io/npm/dm/%40belyaev_dev%2Fnestjs-amo.svg" alt="NPM Downloads" /></a>
 
 <div align="center">
   <a href="https://nestjs.com" target="_blank">
@@ -28,10 +28,10 @@ application.
 
 ```bash
 # npm
-npm install nestjs-amo
+npm install @belyaev_dev/nestjs-amo
 
 # yarn
-yarn add nestjs-amo
+yarn add @belyaev_dev/nestjs-amo
 ```
 
 Furthermore, install
@@ -55,7 +55,7 @@ gain access to `AmoService`.
 
 ```ts
 import { Module } from "@nestjs/common";
-import { AmoModule } from "nestjs-amo";
+import { AmoModule } from "@belyaev_dev/nestjs-amo";
 
 @Module({
 	imports: [
@@ -95,7 +95,7 @@ asynchronously.
 
 ```ts
 import { Module } from "@nestjs/common";
-import { AmoModule } from "nestjs-amo";
+import { AmoModule } from "@belyaev_dev/nestjs-amo";
 
 @Module({
 	imports: [
@@ -136,7 +136,7 @@ files.
 ```ts
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
-import { AmoModule } from "nestjs-amo";
+import { AmoModule } from "@belyaev_dev/nestjs-amo";
 
 @Module({
 	imports: [
@@ -178,7 +178,7 @@ export class AppModule {}
 #### Calling send method
 
 ```typescript
-import { AmoService } from "nestjs-amo";
+import { AmoService } from "@belyaev_dev/nestjs-amo";
 
 @Injectable()
 export class YourService {
@@ -194,7 +194,7 @@ export class YourService {
 #### Calling custom endpoint
 
 ```typescript
-import { AmoService } from "nestjs-amo";
+import { AmoService } from "@belyaev_dev/nestjs-amo";
 
 @Injectable()
 export class YourService {
