@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Amo, OAuth } from '@shevernitskiy/amo';
+import type { OAuthRefresh } from '@shevernitskiy/amo';
 import { AMO_SERVICE_OPTIONS } from './amo.constants';
 import { AmoServiceOptions } from './interfaces';
 
@@ -45,16 +46,17 @@ export class AmoService implements IAmoService {
     code: string,
     referer: string,
     on_token?: (token: OAuth) => void | Promise<void>,
+    widgetOverrides?: Partial<Pick<OAuthRefresh, 'client_id' | 'client_secret' | 'redirect_uri'>>,
   ): Promise<Amo> {
     const settings = await this.amoServiceOptions.widget_settings;
     const amo = new Amo(
       referer,
       {
-        client_id: settings.client_id,
-        client_secret: settings.client_secret,
+        client_id: widgetOverrides?.client_id ?? settings.client_id,
+        client_secret: widgetOverrides?.client_secret ?? settings.client_secret,
         grant_type: 'authorization_code',
         code,
-        redirect_uri: settings.redirect_uri,
+        redirect_uri: widgetOverrides?.redirect_uri ?? settings.redirect_uri,
       },
       {
         on_token,
